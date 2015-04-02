@@ -1,0 +1,6 @@
+c:\users\nestor\desktop\Spring_2015\jccc-sustainability1\jccc-sustainability1\bin\jccc-sustainability1.dll.config
+c:\users\nestor\desktop\Spring_2015\jccc-sustainability1\jccc-sustainability1\bin\jccc-sustainability1.dll
+c:\users\nestor\desktop\Spring_2015\jccc-sustainability1\jccc-sustainability1\bin\jccc-sustainability1.pdb
+c:\users\nestor\desktop\Spring_2015\jccc-sustainability1\jccc-sustainability1\obj\Debug\jccc-sustainability1.csprojResolveAssemblyReference.cache
+c:\users\nestor\desktop\Spring_2015\jccc-sustainability1\jccc-sustainability1\obj\Debug\jccc-sustainability1.dll
+c:\users\nestor\desktop\Spring_2015\jccc-sustainability1\jccc-sustainability1\obj\Debug\jccc-sustainability1.pdb
