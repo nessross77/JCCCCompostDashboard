@@ -20,19 +20,18 @@ namespace jccc_sustainability1.WebForms
         }
         
         
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            int userId = CheckCredentials(TextBox1.Text, TextBox2.Text);
-            if (userId > 0)
-            {
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
+        //    if (CheckCredentials(TextBox1.Text, TextBox2.Text))
+        //    {
 
-                Response.Redirect("MasterPage.aspx");
-            }
-        }
+        //        Response.Redirect("MasterPage.aspx");
+        //    }
+        //}
 
-        public static int CheckCredentials(string username, string password)
+        public static bool CheckCredentials(string username, string password)
         {
-            int userId = 0;
+            bool userId = false;
 
             SqlConnection con = new SqlConnection(connectionstring);
             using (SqlCommand cmd = new SqlCommand("SELECT UserId, Passwords, Guids FROM dbo.Users WHERE username=@username", con))
@@ -51,10 +50,9 @@ namespace jccc_sustainability1.WebForms
 
                     if (dbPassword == hashedPassword)
                     {
-                        userId = dbUserId;
+                        userId = true;
                     }
                 }
-                con.Close();
             }
             return userId;
         }

@@ -1,290 +1,241 @@
-﻿@charset "utf-8";
-/* CSS Document*/
 
-/*Begin CSS Reset*/
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+
+#features {
+	text-align: center;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
+#features img {
+	margin: 0 0 20px;
 }
 
-blockquote, q { quotes: none; }
-blockquote:before, blockquote:after,
-q:before, q:after { content: ""; content: none; }
-ins { background-color: #ff9; color: #000; text-decoration: none; }
-mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
-del { text-decoration: line-through; }
-abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
-table { border-collapse: collapse; border-spacing: 0; }
-hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
-input, select { vertical-align: middle; }
-
-body { font:13px/1.231 sans-serif; *font-size:small; }
-select, input, textarea, button { font:99% sans-serif; }
-pre, code, kbd, samp { font-family: monospace, sans-serif; }
-
-/*End CSS Reset*/
-
-html { overflow-y: scroll; }
-a:hover, a:active { outline: none; }
-ul, ol { margin-left: 2em; }
-ol { list-style-type: decimal; }
-nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
-small { font-size: 85%; }
-strong, th { font-weight: bold; }
-td { vertical-align: top; }
-sub, sup { font-size: 75%; line-height: 0; position: relative; }
-sup { top: -0.5em; }
-sub { bottom: -0.25em; }
-
-pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 15px; }
-textarea { overflow: auto; } 
-.ie6 legend, .ie7 legend { margin-left: -7px; } 
-input[type="radio"] { vertical-align: text-bottom; }
-input[type="checkbox"] { vertical-align: bottom; }
-.ie7 input[type="checkbox"] { vertical-align: baseline; }
-.ie6 input { vertical-align: text-bottom; }
-label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
-button, input, select, textarea { margin: 0; }
-input:valid, textarea:valid   {  }
-input:invalid, textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red; }
-.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
-
-
-::-moz-selection{ background:#ff0000; color:#fff; text-shadow: none; }
-::selection { background:#ff0000; color:#fff; text-shadow: none; }
-a:link { -webkit-tap-highlight-color: #FF5E99; }
-button {  width: auto; overflow: visible; }
-.ie7 img { -ms-interpolation-mode: bicubic; }
-
-body, select, input, textarea { color: #444; }
-h1, h2, h3, h4, h5, h6 { font-weight: bold; }
-
-
-/* --------------------------------------------
-   My Styles
--------------------------------------------- */
-
-body { background: #bdbdd9; font-family: sans-serif; color: #383838; text-align: center; }
-	
-	a { color: #9f443b; text-decoration: none; }
-	a:hover { text-decoration: underline; }
-
-	#container { width: 92%; margin: 0 auto; padding: 1.25em 0; text-align: left; }
-	
-		header { overflow: hidden; clear: both; margin-bottom: 1.875em; }
-		
-			header hgroup { float: left; }
-				header hgroup h1 { font-size: 2em; text-transform: uppercase; text-shadow: 1px 1px 0 #fff; }
-				header hgroup h2 { font-size: 1.5em; text-shadow: 1px 1px 0 #fff; font-weight: normal; }
-			
-			header nav { float: right; margin: 1.5em 0 0 0; }
-				header nav ul { margin: 0; padding: 0; overflow: hidden; }
-					header nav ul li { list-style: none; float: left; display: inline; margin: 0; padding: 0; border-right: 1px solid #938a78; font-size: 18px; text-transform: uppercase; }
-					header nav ul li:last-child { border: 0; }
-						header nav ul li a { 
-							display: block; 
-							background: #c1b7a7; 
-							padding: .75em 1.5em; 
-							color: #fff; 
-							text-decoration: none;
-							-webkit-transition-property: background; 
-							-webkit-transition-duration: .5s; 
-							-webkit-transition-timing-function: linear;  }
-						header nav ul li a:hover { text-decoration: none; background: #9f443b; }
-		
-		#banner { padding: .25em; font-size: 1.125em; line-height: 1.4; border-top: 1px solid #383838; border-bottom: 1px solid #383838; clear: both; margin-bottom: 1.875em; }
-			#banner p { text-shadow: 1px 1px 0 #fff; }
-		
-		#content { float: left; width: 70%; margin-right: 1.25em; }
-		
-			#content article { background: #fff; margin: 0 0 1.875em 0; padding: 1.25em; -webkit-border-radius: 1em; -webkit-box-shadow: 0 0 4px rgba(0,0,0,.3); height: 300px;}
-					
-				#content article h3 { font-size: 1.625em; margin-bottom: .25em; }
-				#content article img { float: right; margin: 0 0 .625em .625em; }
-				#content article p { font-size: 1em; margin-bottom: 1em; }
-				#content article p:last-child { margin-bottom: 0; }
-		
-		#sidebar { float: left; width: 24%; }
-		
-			#sidebar aside { background: #fff; margin: 0 0 1.875em 0; padding: 1.25em; -webkit-border-radius: 1em; -webkit-box-shadow: 0 0 4px rgba(0,0,0,.3); }
-				#sidebar aside h4 { color: #333; font-size: 1em; margin-bottom: .25em; }
-				#sidebar aside p { font-size: .8125em; margin-bottom: .5em; }
-				#sidebar aside p:last-child { margin: 0; }
-				#sidebar aside ul { margin: 0; padding: 0; }
-					#sidebar aside ul li { list-style: none; margin-bottom: .375em; }
-						
-		footer { clear: both; border-top: 1px solid #383838; padding: .625em 1.25em; font-size: .875em; }
-		
-			footer nav ul { margin: 0 0 .5em 0; padding: 0; }
-				footer nav ul li { list-style: none; display: inline; margin-right: .75em; }
-.studiojLeft {
-	float: left;
-	padding-right: 1em;
-    width:12%;
-    height:auto;
-}
-.highlight	{
-	color:#9f443b;
-	font-size:125%;
-	padding-bottom:1em;
-}		
-
-#socialI{
-    width:20%;
-    height:auto;
+#inputMessage {
+	margin-bottom: 15px;
 }
 
-#chart{
-    float:left;
-}
-/* --------------------------------------------
-   < 1200px viewport
--------------------------------------------- */			
-				
-@media (max-width: 1200px) {
-
-	#container { width: 96%; }
-		#content { width: 70%; }
-		#sidebar { width: 24%; }
-		
-	header hgroup h1 { font-size: 2em; }
-	header hgroup h2 { font-size: 1.125em; }
-	
-	header nav { margin-top: 1.125em; }
-		header nav ul li { font-size: 1em; }
-		
-	#banner { margin-bottom: 1.25em; }
-		
-	#content article { margin-bottom: .75em; }
-		#content article h3 { font-size: 1.125em; }
-		#content article p { font-size: .875em; }
-		
-	#sidebar aside { margin-bottom: .75em; }
-
+footer {
+	background: #333;
+	color: #eee;
+	font-size: 11px;
+	padding: 20px;
 }
 
 
-/* --------------------------------------------
-  iPad in landscape
--------------------------------------------- */
+hr{
+    margin:10px 0 15px 5px;
+    background:-webkit-linear-gradient(left, #CCCCCC, #333333, #CCCCCC) #333333;
+  border:0;
+  height:1px;
+}
 
-/* 	
-	TO PREVIEW ON THE DESKTOP, REPLACE THE QUERY WITH THE FOLLOW:
-	@media (max-width: 1024px) {  } 
-*/
-	
-@media (max-device-width: 1024px) and (orientation: landscape) {
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
 
-	#container { width: 96%; }
-		#content { width: 70%; }
-		#sidebar { width: 24%; }
-	
-	header { margin-bottom: .75em; }
-	
-	header hgroup { margin-bottom: .75em; }
-	
-	header nav { float: none; clear: both; }
-		header nav ul { width: 100%; }
-			header nav ul li { font-size: 100%; width: 15%; text-align: center; }
-				header nav ul li:last-child { width: 15%; }
-			
-	#banner { margin-bottom: 1.125em; }
-		
-	#content article img { float: none; margin: 0 0 .625em 0; width: 100%; }
-
+body {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+    background-color:#EADBC4;
 }
 
 
-/* --------------------------------------------
-  iPad in portrait
--------------------------------------------- */
 
-/* 	
-	TO PREVIEW ON THE DESKTOP, REPLACE THE QUERY WITH THE FOLLOW:
-	@media (max-width: 768px) {  } 
-*/
+.well .page-header {
+	margin-top: 0;
+}
 
-@media (max-device-width: 1024px) and (orientation: portrait) {
+.well .page-header h1 {
+	margin-top: 0;
+}
 
-	#container { width: 96%; }
-		#content { float: none; width: 75%; margin: 0 0 .75em 0; }
-		#sidebar { float: none; width: 25%; }
-	
-	header { margin-bottom: .75em; }
-	
-	header hgroup { margin-bottom: .75em; }
-	
-	header nav { float: none; clear: both; }
-		header nav ul { width: 100%; }
-			header nav ul li { font-size: 100%; width: 100%; text-align: center; }
-				header nav ul li:last-child { width: 100%; }
-			
-	#banner { margin-bottom: 1.125em; }
-	
-	#content article { padding: 1.25em; }
-		#content article img { float: none; margin: 0 0 .625em 0; width: 75%; }
-	
-	#sidebar aside { background: #A79F91; color: #fff; float: left; width: 25%; min-height: 170px; margin-right: 1.25em; padding: 1.25em; }
-		#sidebar aside:last-child { margin: 0; }
-
+ul.unstyled {
+	list-style: none;
+	padding: 0;
 }
 
 
-/* --------------------------------------------
-  Mobile
--------------------------------------------- */
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
 
-@media (max-width: 600px) {
-
-	#container, #content { float: none; width: inherit; }
-		#content { margin: 0; }
-	
-	#sidebar, #banner { display: none; }
-	
-	header { margin: 0 0 .75em 0; text-align: center; }
-		header hgroup { width: 100%; margin-bottom: .75em; }
-			header hgroup h1 { font-size: 1em; }
-			header hgroup h2 { font-size: .75em; }
-	
-		header nav { float: none; clear: both; }
-			header nav ul { width: 100%; }
-				header nav ul li { float: none; display: block; width: 100%; font-size: 65%; text-align: left; border-bottom: 1px solid #938a78; }
-					header nav ul li:last-child { width: 100%; border-bottom: 0; }
-					header nav ul li a { padding: 1.25em; }
-	
-	#content article { padding: .5em; -webkit-border-radius: 0; }
-		#content article h3 { font-size: 1em; }
-		#content article p { font-size: .75em; }
-		#content article img { display: none; }
-	
-	#sidebar aside { background: #A79F91; color: #fff; float: left; width: 40%; min-height: 170px; margin-right: 1.25em; padding: 1.25em; }
-		#sidebar aside:last-child { margin: 0; }
-		
-	footer { padding: .625em; font-size: .75em; }
-
-    .studiojLeft {
-
-	padding-right: 1em;
-    width:5%;
-    vertical-align:central;
-    height:auto;
+#searchInput {
+	width: 200px;
 }
 
+.navbar-brand {
+	padding: 13px 15px;
 }
+   
+   
+/* --------------------------------------
+   Carousel
+   -------------------------------------- */
+
+#myCarousel {
+	margin-top: 60px;
+}
+
+.carousel-caption {
+	font-size: 24px;
+    font-weight:bolder;
+    color: white;
+    /*background-color: yellowgreen;*/
+}
+
+.carousel-caption h4 {
+	font-size: 40px;
+}
+
+#myCarousel .item { height: 400px; }
+
+#slide1 {
+    width:100%;
+    height: 400px;
+	background: url('../img/Compost.jpg') top center no-repeat;
+
+}
+
+#slide2 {
+      width:100%;
+    height: 400px;
+	background: url('../img/Compost.jpg') top center no-repeat;
+}
+
+#slide3 {
+      width:100%;
+    height: 400px;
+	background: url('../img/Compost.jpg') top center no-repeat;
+}
+
+
+/* --------------------------------------
+   Global Styles
+   -------------------------------------- */
+
+.alert {
+	margin-top: 20px;
+	display: none;
+}
+
+.well {
+	margin: 20px 0;
+}
+
+.tabbable img.thumbnail {
+	margin: 0 20px 10px 0;
+}
+
+.thumbnails {
+	margin: 20px 0;
+}
+
+.thumbnail {
+	position: relative;
+}
+
+.thumbnail h3 {
+	font-size: 16px;
+	margin: 0 0 10px;
+	line-height: 20px;
+}
+
+.thumbnail .price {
+	font-size: 22px;
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	padding: 10px;
+}
+
+.thumbnail .price sup {
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.thumbnail span.glyphicon {
+	margin-right: 5px;
+}
+
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+	
+	.thumbnail .price {
+		font-size: 14px;
+	}
+	
+	.thumbnail .price sup {
+		font-size: 10px;
+	}
+	
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	
+	#myCarousel .item { height: 310px; }
+	
+	#slide1 {
+		background: url('../img/Compost.jpg') top center no-repeat;
+	}
+	
+	#slide2 {
+		background: url('../img/Compost.jpg') top center no-repeat;
+	}
+	
+	#slide3 {
+		background: url('../img/Compost.jpg') top center no-repeat;
+	}
+	
+	.carousel-caption {
+		font-size: 16px;
+	}
+	
+	.carousel-caption h4 {
+		font-size: 22px;
+	}
+	
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+	#myCarousel .item { height: 500px; }
+	
+	#slide1 {
+		background: url('../img/Compost.jpg') top center no-repeat;
+	}
+	
+	#slide2 {
+		background: url('../img/Compost.jpg') top center no-repeat;
+	}
+	
+	#slide3 {
+		background: url('../img/Compost.jpg') top center no-repeat;
+	}
+
+}
+
+#line{
+    height: 550px;
+}
+
+#g1 #g2 #g3{
+        width:50%; height:160px;
+        display: inline-block;
+        margin: 15px auto;
+        color:black;
+      }
+
+.tfwc{
+    height:650px;
+}
+
+
+

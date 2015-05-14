@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,9 +12,10 @@ namespace jccc_sustainability1
 {
     public partial class Default : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Home_Click(object sender, EventArgs e)
@@ -48,5 +52,9 @@ namespace jccc_sustainability1
         {
             Response.Redirect("WebForms/Login.aspx");
         }
+
+
+        
     }
 }
+

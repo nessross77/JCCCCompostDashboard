@@ -5,116 +5,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="keywords" content="jccc sustainability" />
-	<meta name="description" content="JCCC Sustainability" /> 
-<link rel="stylesheet" href="../css/Styles.css" />
+    <meta name="description" content="JCCC Sustainability" />
+    <meta name="author" content="Nestor Rosales" />
+    <link href="../css/bootstrap.css" rel="stylesheet" />
+    <link href="../css/bootstrap-glyphicons.css" rel="stylesheet" />
+    <link href="../css/Custom.css" rel="stylesheet" />
+    <link href="../css/chartist.min.css" rel="stylesheet" />
     <title>JCCC Sustainability</title>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-         
-        <div id="container">
-		<header>
-			<img src="../img/JCCCAppLogo.png" alt="Composting and Recycling JCCC" class="studiojLeft"/>
-             <br /> <br /> <br />
-			<hgroup>
-				<h1>Johnson County Community College</h1>
-				<h2>Composting &amp; Recycling</h2>
-			</hgroup>
-				
-				<nav>
-					<ul>
-						<li><asp:LinkButton ID="Home" runat="server"  Text="Home" OnClick="Home_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Composting" runat="server"  Text="Composting" OnClick="Composting_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Recycling" runat="server"  Text="Recycling" OnClick="Recycling_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Data" runat="server"  Text="Data" OnClick="Data_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="About" runat="server"  Text="About" OnClick="About_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="ContactUs" runat="server"  Text="Contact Us" OnClick="ContactUs_Click"></asp:LinkButton></li>
-                        <li><asp:LinkButton ID="Login" runat="server"  Text="Login" OnClick="Login_Click"></asp:LinkButton></li>
-					</ul>
-                   
-				</nav>
-			
-		</header>
-			
-			<!--div id="banner">
-				<p><img src="img/studioJ.png" alt="" />
-					</a>
-				</p>
-			</div-->
-			
-			<div id="content">
-				
-				<article>
-					<h3>Site Under Construction</h3>
-				</article>
-				
-				<article>
-					<div id="coin-slider"> 
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/1.jpg' /> <span> Some Text 1</span></a> 
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/2.jpg' /> <span> Some Text 2 </span></a>
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/3.jpg' /> <span> Some Text 3 </span> </a> 
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/4.jpg' /> <span> Some Text 4 </span> </a>
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/5.jpg' /> <span> Some Text 5 </span></a>
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/6.jpg' /><span> Some Text 6 </span> </a> 				
-					</div>
-				</article>
-				
-			</div>
-			
-			<div id="sidebar">
-				
-				<aside id="brief">
-                    <h3>NEWS: </h3>
-			
-				</aside>
-				
-				<aside id="recent">
-					<h3>Follow Us</h3>
-					<img src="../img/social.jpg" title="Facebook and Twitter" border="0"  id="socialI"/></>
-				</aside>
-				
-			</div>
-			
-			<footer>
-			
-				<nav>
-					<ul>
-						<li><asp:LinkButton ID="Home2" runat="server"  Text="Home" OnClick="Home_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Composting2" runat="server"  Text="Composting" OnClick="Composting_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Recycling2" runat="server"  Text="Recycling" OnClick="Recycling_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Data2" runat="server"  Text="Data" OnClick="Data_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="About2" runat="server"  Text="About" OnClick="About_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="ContactUs2" runat="server"  Text="Contact Us" OnClick="ContactUs_Click"></asp:LinkButton></li>
-                        <li><asp:LinkButton ID="Login2" runat="server"  Text="Login" OnClick="Login_Click"></asp:LinkButton></li>
-					</ul>
-				</nav>
-				
-				<p>&copy; Copyright 2015. All Rights Reserved Group 1</p>
-			
-			</footer>
-		</div>
+        <div class="container" id="main">
+            <!-- Static navbar -->
+            <div class="navbar-nav navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
 
-		
-	 <script type="text/javascript">
-	     $(document).ready(function () {
-	         $('#coin-slider').coinslider();
-	     });
-	</script>
-	<!--[if lte IE 7]><script type="text/javascript" src="site/imgSizer.js"></script>
-	<script type="text/javascript">
-		window.onload = function() {
-		imgSizer.collate();
-		}
-	</script><![endif]-->
-	<!--[if lte IE 6]><script type="text/javascript" src="share/ddpng.js"></script>
-	<script type="text/javascript">
-		DD_belatedPNG.fix('body, #page, h1, h1 img, ul.nav, ul.nav a, .main h2, .main h2 b, .footer');
-	</script><![endif]-->
-    </div>
+                        <asp:LinkButton ID="HomeLogo" runat="server" OnClick="Home_Click" CssClass="navbar-brand"><img src="../img/JCCCAppLogo.png" alt="Composting and Recycling JCCC" class="img-circle" style="width:30px; height:auto;"/></asp:LinkButton>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <asp:LinkButton ID="LinkButton1" runat="server" Text="Home" OnClick="Home_Click"></asp:LinkButton></li>
+                            <li>
+                                <asp:LinkButton ID="CompostingB" runat="server" Text="Composting" OnClick="Composting_Click"></asp:LinkButton></li>
+                            <li>
+                                <asp:LinkButton ID="RecyclingB" runat="server" Text="Recycling" OnClick="Recycling_Click"></asp:LinkButton></li>
+                            <li>
+                                <asp:LinkButton ID="AboutB" runat="server" Text="About" OnClick="About_Click"></asp:LinkButton></li>
+                            <li class="active">
+                                <asp:LinkButton ID="ContactUsB" runat="server" Text="Contact Us" OnClick="ContactUs_Click"></asp:LinkButton></li>
+                        </ul>
+                        <!--End Navbar left side-->
+                        <ul class="nav navbar-nav pull-right">
+                            <li>
+                                <asp:LinkButton ID="Login" runat="server" Text="Login" OnClick="Login_Click"><span class="glyphicon glyphicon-user"></span>Login</asp:LinkButton></li>
+                        </ul>
+                        <!--End Navbar right side-->
+                    </div>
+                    <!--end navbar collapse-->
+                </div>
+                <!--Navbar container-->
+            </div>
+            <!--End navbar-->
+        </div>
     </form>
-		
-	</body>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/jquery-1.9.0.js"></script>
+    <script src="../Scripts/chartist.min.js"></script>
+</body>
 </html>

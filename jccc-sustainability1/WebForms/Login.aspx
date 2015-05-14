@@ -5,52 +5,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="keywords" content="jccc sustainability" />
-	<meta name="description" content="JCCC Sustainability" /> 
-	<link rel="stylesheet" href="../css/Styles.css" />
+    <meta name="description" content="JCCC Sustainability" />
+    <meta name="author" content="Nestor Rosales" />
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-glyphicons.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
     <title>JCCC Sustainability</title>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-         
-        <div id="container">
-		<header>
-			<img src="../img/JCCCAppLogo.png" alt="Composting and Recycling JCCC" class="studiojLeft"/>
-             <br /> <br /> <br />
-			<hgroup>
-				<h1>Johnson County Community College</h1>
-				<h2>Composting &amp; Recycling</h2>
-			</hgroup>
-				
-				<nav>
-					<ul>
-						<li><asp:LinkButton ID="Home" runat="server"  Text="Home" OnClick="Home_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Composting" runat="server"  Text="Composting" OnClick="Composting_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Recycling" runat="server"  Text="Recycling" OnClick="Recycling_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Data" runat="server"  Text="Data" OnClick="Data_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="About" runat="server"  Text="About" OnClick="About_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="ContactUs" runat="server"  Text="Contact Us" OnClick="ContactUs_Click"></asp:LinkButton></li>
-                        <li><asp:LinkButton ID="Login" runat="server"  Text="Login" OnClick="Login_Click"></asp:LinkButton></li>
-					</ul>
-                   
-				</nav>
-			
-		</header>
-			
-			<!--div id="banner">
-				<p><img src="img/studioJ.png" alt="" />
-					</a>
-				</p>
-			</div-->
-			
-			<div id="content">
-				
-				<article>
+  
+				<div class="container">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+      
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus />
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required />
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+          
+            <a href="#" class="forgot-password">
+                Forgot the password?
+            </a>
+        </div><!-- /card-container -->
+    
+				<%--<article>
                     <asp:Label ID="Label1" runat="server" Text="Username: "></asp:Label>
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Username is Required to Login." ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Username is Required to Login." ControlToValidate="TextBox1" ></asp:RequiredFieldValidator>
                     <br />
                     <br />
                     <asp:Label ID="Label2" runat="server" Text="Password:"></asp:Label>
@@ -60,71 +53,13 @@
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SUSJCCC1ConnectionString %>" ></asp:SqlDataSource>
                     <br />
                     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Log In" />
-				</article>
+				</article>--%>
 				
-				<!--article>
-					<div id="coin-slider"> 
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/1.jpg' /> <span> Some Text 1</span></a> 
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/2.jpg' /> <span> Some Text 2 </span></a>
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/3.jpg' /> <span> Some Text 3 </span> </a> 
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/4.jpg' /> <span> Some Text 4 </span> </a>
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/5.jpg' /> <span> Some Text 5 </span></a>
-						<a href="http://www.jccc.edu/sustainability/index.html" target="_blank"> <img src='coin-slider/images/6.jpg' /><span> Some Text 6 </span> </a> 				
-					</div>
-				</!--article-->
-				
-			</div>
-			
-			<div id="sidebar">
-				
-				<aside id="brief">
-                    <h3>NEWS: </h3>
-			
-				</aside>
-				
-				<aside id="recent">
-					<h3>Follow Us</h3>
-					<img src="img/fb+tw.jpg" title="Facebook and Twitter" border="0"  id="socialI"/></>
-				</aside>
-				
-			</div>
-			
-			<footer>
-			
-				<nav>
-					<ul>
-						<li><asp:LinkButton ID="Home2" runat="server"  Text="Home" OnClick="Home_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Composting2" runat="server"  Text="Composting" OnClick="Composting_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Recycling2" runat="server"  Text="Recycling" OnClick="Recycling_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="Data2" runat="server"  Text="Data" OnClick="Data_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="About2" runat="server"  Text="About" OnClick="About_Click"></asp:LinkButton></li>
-						<li><asp:LinkButton ID="ContactUs2" runat="server"  Text="Contact Us" OnClick="ContactUs_Click"></asp:LinkButton></li>
-                        <li><asp:LinkButton ID="Login2" runat="server"  Text="Login" OnClick="Login_Click"></asp:LinkButton></li>
-					</ul>
-				</nav>
-				
-				<p>&copy; Copyright 2015. All Rights Reserved Group 1</p>
-			
-			</footer>
-		</div>
-
-		
-	 <script type="text/javascript">
-	     $(document).ready(function () {
-	         $('#coin-slider').coinslider();
-	     });
-	</script>
-	<!--[if lte IE 7]><script type="text/javascript" src="site/imgSizer.js"></script>
-	<script type="text/javascript">
-		window.onload = function() {
-		imgSizer.collate();
-		}
-	</script><![endif]-->
-	<!--[if lte IE 6]><script type="text/javascript" src="share/ddpng.js"></script>
-	<script type="text/javascript">
-		DD_belatedPNG.fix('body, #page, h1, h1 img, ul.nav, ul.nav a, .main h2, .main h2 b, .footer');
-	</script><![endif]-->
-    </div>
+				   <script src="http://code.jquery.com/jquery.js"></script>
+            <script>window.jQuery || document.write('<script src="Scripts/jquery-1.8.2.min.js"><\/script>')</script>
+            <script src="Scripts/bootstrap.min.js"></script>
+            <script src="Scripts/script.js"></script>
+                    </div>
     </form>
 		
 	</body>
