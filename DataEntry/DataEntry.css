@@ -1,0 +1,114 @@
+﻿ Tablet Landscape 
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+
+ Tabled Portrait 
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+#Compost {
+    width: 100px;
+    height: 44px;
+    color: white;
+    font-weight: bold;
+    background-color: #AFC212;
+}
+#Recycling {
+    width: 100px;
+    height: 44px;
+    color: white;
+    font-weight: bold;
+    background-color: #AFC212;
+}
+h3{
+    padding: 0px;
+    font-size: 24.5px;
+    line-height: 40px;
+    background-color: transparent;
+    color: white;
+}
+p{
+    padding: 0px;
+    margin: 0px;
+}
+h6{
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0px;
+}
+#H6Div{
+    background-color: #363534;
+    text-align:center;
+    padding: 0px;
+    line-height: inherit;
+}
+#H3Div{
+    background-color: #AFC212;
+    text-align: center;
+    padding: 0px;
+    line-height:inherit;
+    height: inherit;
+}
+#buttons{
+    text-align:center;
+    height: 51px;
+}
+#logoDiv img{
+    display:block;
+    margin: auto;
+    padding: 0px;
+}
+#Submit{
+    width: 100px;
+    height: 44px;
+    color: white;
+    font-weight: bold;
+    background-color: #AFC212;
+}
+#Cancel{
+    width: 100px;
+    height: 44px;
+    color: white;
+    font-weight: bold;
+    background-color: #AFC212;
+}
+#SCbuttons{
+    text-align: center;
+}
+div{
+    line-height: 80%;
+}
+#New{
+    color: white;
+    font-weight: bold;
+    background-color: #AFC212;
+}
+#Update{
+    color: white;
+    font-weight: bold;
+    background-color: #AFC212;
+}
+#datatype{
+    text-align:center;
+}
+#logoDiv{
+    position:relative;
+}
+#Retrieve{
+    color: white;
+    font-weight: bold;
+    background-color: #AFC212;
+}
+#dataentry{
+    text-align:center;
+}

@@ -54,7 +54,7 @@ namespace jccc_sustainability1.WebForms
 
         protected void Login_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("../DataEntry/DataEntry.aspx");
         }
 
         //Line Chart
