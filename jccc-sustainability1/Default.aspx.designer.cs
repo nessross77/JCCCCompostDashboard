@@ -85,12 +85,30 @@ namespace jccc_sustainability1 {
         protected global::System.Web.UI.WebControls.LinkButton Login;
         
         /// <summary>
-        /// CompostBuble control.
+        /// CompostBubble control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton CompostBuble;
+        protected global::System.Web.UI.WebControls.LinkButton CompostBubble;
+        
+        /// <summary>
+        /// RecycleBubble control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton RecycleBubble;
+        
+        /// <summary>
+        /// GalleryBubble control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton GalleryBubble;
     }
 }

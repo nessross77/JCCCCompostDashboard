@@ -145,7 +145,7 @@
             </div>
             <!-- end features -->
 
-            <footer>
+               <footer>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-2">
@@ -155,12 +155,9 @@
 
                         <div class="col-sm-4">
                             <h6>About Us</h6>
-                            <p>Algo sobre nosotros los del equipo 1.</p>
+                            <p>The Center for Sustainability at JCCC is providing free access to the data generated in the compost and recycling processes.</p>
                         </div>
                         <!-- end col-sm-4 -->
-
-
-                        <!-- end col-sm-2 -->
 
                         <div class="col-sm-2">
                             <h6>Follow Us</h6>
@@ -173,7 +170,7 @@
                         <!-- end col-sm-2 -->
 
                         <div class="col-sm-2">
-                            <h6>Coded with Nesta and Brian, by Nestor</h6>
+                            <h6>Coded by Nesta Wilson, Brian Boeding and Nestor Rosales</h6>
                         </div>
                         <!-- end col-sm-2 -->
                     </div>

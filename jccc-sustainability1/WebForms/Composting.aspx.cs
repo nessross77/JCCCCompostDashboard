@@ -12,6 +12,7 @@ namespace jccc_sustainability1.WebForms
     public partial class Composting : System.Web.UI.Page
     {
         private static string connectionstring = ConfigurationManager.ConnectionStrings["SUSJCCC1ConnectionString"].ConnectionString;
+        public static int[] years;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -86,14 +87,6 @@ namespace jccc_sustainability1.WebForms
         }
 
 
-        void setValues()
-        {
-            string[] values = weightsGraph();
-            chartData = values[1];
-            chartLabels = values[0];
-        }
-
-
         public static string[] weightsGraph()
         {
             SqlConnection con = new SqlConnection(connectionstring);
@@ -123,6 +116,131 @@ namespace jccc_sustainability1.WebForms
         }
         //End Line Chart
 
+
+        //PreConsumer
+        private string PCLabels;
+        public string PreConsumerLabels
+        {
+            get
+            {
+                return PCLabels;
+            }
+            set
+            {
+                PCLabels = value;
+            }
+        }
+
+        private string PCData;
+        public string PreConsumerData
+        {
+            get
+            {
+                return PCData;
+            }
+            set
+            {
+                PCData = value;
+            }
+        }
+
+        public static string[] PreConsumerGraph()
+        {
+            SqlConnection con = new SqlConnection(connectionstring);
+            con.Open();
+            SqlCommand cmdTotalCompost = new SqlCommand("SELECT [Date],[Pre-Consumer Food (lbs)] FROM [db4782e67768554c1fa458a46e013cd5da].[dbo].[CompostData] WHERE [Pre-Consumer Food (lbs)] IS NOT NULL ORDER By [Date]");
+            cmdTotalCompost.Connection = con;
+            SqlDataReader reader = cmdTotalCompost.ExecuteReader();
+            string dates = "[";
+            string weights = "";
+            while (reader.Read())
+            {
+                DateTime dt = (DateTime)reader[0];
+                dates += dt.Year.ToString();
+                weights += reader[1].ToString();
+                if (reader.Read() != false)
+                {
+                    dates += ",";
+                    weights += ",";
+                }
+            }
+            dates += "]";
+            weights += "";
+            reader.Close();
+            con.Dispose();
+            string[] values = new String[2] { dates, weights };
+            return values;
+        }
+        //End PreConsumer
+
+        //Carbon graph
+        private string CLabels_;
+        public string CLabels
+        {
+            get
+            {
+                return CLabels_;
+            }
+            set
+            {
+                CLabels_ = value;
+            }
+        }
+
+        private string CData_;
+        public string CData
+        {
+            get
+            {
+                return CData_;
+            }
+            set
+            {
+                CData_ = value;
+            }
+        }
+        public static string[] CarbonGraph()
+        {
+            SqlConnection con = new SqlConnection(connectionstring);
+            con.Open();
+            SqlCommand cmdTotalCompost = new SqlCommand("SELECT [Date],[Total Carbon To Date (lbs)] FROM [db4782e67768554c1fa458a46e013cd5da].[dbo].[CompostData] WHERE [Total Carbon To Date (lbs)] IS NOT NULL ORDER By [Date]");
+            SqlCommand cmdCount = new SqlCommand("SELECT Count(*) FROM [db4782e67768554c1fa458a46e013cd5da].[dbo].[CompostData] WHERE [Total Carbon To Date (lbs)] IS NOT NULL");
+            cmdTotalCompost.Connection = con;
+            cmdCount.Connection = con;
+            SqlDataReader reader = cmdTotalCompost.ExecuteReader();
+            SqlDataReader reader2 = cmdCount.ExecuteReader();
+            string dates = "[";
+            string weights = "";
+            
+            if (reader2.Read())
+            {
+                int lim = int.Parse(reader2[0].ToString());
+                years = new int[lim];
+            }
+            int i = 0;
+            while (reader.Read())
+            {
+                DateTime dt = (DateTime)reader[0];
+                years[i] = dt.Year;
+                dates += dt.Year.ToString();
+                weights += reader[1].ToString();
+                if (reader.Read() != false)
+                {
+                    dates += ",";
+                    weights += ",";
+                }
+                i++;
+            }
+    
+            dates += "]";
+            weights += "";
+            reader.Close();
+            con.Dispose();
+            string[] values = new String[2] { dates, weights };
+            return values;
+        }
+        //End Carbon graph
+
         //Temperature Gauges
         public string temperature
         {
@@ -150,5 +268,30 @@ namespace jccc_sustainability1.WebForms
             }
             set { }
         }
+
+        public string temperature4
+        {
+            get
+            {
+                return "25";
+            }
+            set { }
+        }
+
+        void setValues()
+        {
+            string[] values = weightsGraph();
+            string[] PCvalues = PreConsumerGraph();
+            string[] Cvalues = CarbonGraph();
+            chartData = values[1];
+            chartLabels = values[0];
+            PCData = PCvalues[1];
+            PCLabels = PCvalues[0];
+            CData_ = Cvalues[1];
+            CLabels_ = Cvalues[0];
+        }
     }
 }
+
+
+

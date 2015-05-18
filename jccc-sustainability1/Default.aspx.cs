@@ -53,6 +53,11 @@ namespace jccc_sustainability1
             Response.Redirect("WebForms/Login.aspx");
         }
 
+        protected void Gallery_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Webforms/Gallery.aspx");
+        }
+
 
         
     }

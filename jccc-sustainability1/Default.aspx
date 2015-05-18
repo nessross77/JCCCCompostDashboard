@@ -148,7 +148,7 @@
                     <div class="panel">
                         
 
-                        <asp:LinkButton ID="CompostBuble" runat="server"  OnClick="Composting_Click"><img src="img/compostBuble.png" alt="Compost stats" class="img-circle"></asp:LinkButton>
+                        <asp:LinkButton ID="CompostBubble" runat="server"  OnClick="Composting_Click"><img src="img/compostBuble.png" alt="Compost stats" class="img-circle"></asp:LinkButton>
 
                         <div class="panel-heading">
                             <h3 class="panel-title">Compost Current Stats</h3>
@@ -158,7 +158,7 @@
                         <p>Check out the current stats of JCCC’s composting program! How many pounds of food waste have we composted? What temperature is the compost? What’s it’s pH level? Click the image to find out!</p>
 
                         
-                        <a href="http://www.jccc.edu/sustainability/projects/composting/index.html" target="_blank" class="btn btn-warning btn-block">Learn More</a>
+                     
                     </div>
                     <!-- end panel -->
                 </div>
@@ -167,7 +167,7 @@
                 <div class="col-sm-4 feature">
                     <div class="panel">
                        
-                        <img src="img/recycleBubble.png" alt="Recycle" class="img-circle">
+                        <asp:LinkButton ID="RecycleBubble" runat="server" Text="Recycling" OnClick="Recycling_Click"><img src="img/recycleBubble.png" alt="Recycle" class="img-circle" /></asp:LinkButton>
 
                         <div class="panel-heading">
                             <h3 class="panel-title">Single Stream Recycling</h3>
@@ -176,7 +176,7 @@
 
                         <p>Recycling on the JCCC campus just got simpler, faster, and easier! Just put all of your paper, #1-7 plastics, and metals in the blue bins! Broken down cardboard can be placed behind the blue bins. </p>
                          
-                        <a href="http://www.jccc.edu/sustainability/projects/recycling/index.html" target="_blank" class="btn btn-danger btn-block">Learn More</a>
+                        
                     </div>
                     <!-- end panel -->
                 </div>
@@ -185,8 +185,7 @@
                 <div class="col-sm-4 feature">
                     <div class="panel">
                         
-                        <img src="img/galleryBubble.jpg" alt="Gallery" class="img-circle">
-
+                        <asp:LinkButton ID="GalleryBubble" runat="server" Text="Recycling" OnClick="Gallery_Click"><img src="img/galleryBubble.jpg" alt="Gallery" class="img-circle" /></asp:LinkButton>
                         <div class="panel-heading">
                             <h3 class="panel-title">Gallery</h3>
                         </div>
@@ -194,7 +193,7 @@
 
                         <p>Here you can see how everything looks like! All the compost piles and our team getting the job done. In addition, all the machinary used to get the <br />final product.</p>
                         
-                        <a href="#" target="_blank" class="btn btn-info btn-block">Learn More</a>
+                       
                     </div>
                     <!-- end panel -->
                 </div>
@@ -212,12 +211,9 @@
 
                         <div class="col-sm-4">
                             <h6>About Us</h6>
-                            <p>Algo sobre nosotros los del equipo 1.</p>
+                            <p>The Center for Sustainability at JCCC is providing free access to the data generated in the compost and recycling processes.</p>
                         </div>
                         <!-- end col-sm-4 -->
-
-
-                        <!-- end col-sm-2 -->
 
                         <div class="col-sm-2">
                             <h6>Follow Us</h6>
@@ -230,7 +226,7 @@
                         <!-- end col-sm-2 -->
 
                         <div class="col-sm-2">
-                            <h6>Coded with Nesta and Brian, by Nestor</h6>
+                            <h6>Coded by Nesta Wilson, Brian Boeding and Nestor Rosales</h6>
                         </div>
                         <!-- end col-sm-2 -->
                     </div>

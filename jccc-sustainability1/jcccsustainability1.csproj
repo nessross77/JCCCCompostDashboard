@@ -121,6 +121,7 @@
     <Content Include="WebForms\About.aspx" />
     <Content Include="WebForms\ContactUs.aspx" />
     <Content Include="WebForms\Composting.aspx" />
+    <Content Include="WebForms\Gallery.aspx" />
     <Content Include="WebForms\Login.aspx" />
     <Content Include="WebForms\MasterPage.aspx" />
     <Content Include="WebForms\Recycling.aspx" />
@@ -160,6 +161,13 @@
     </Compile>
     <Compile Include="WebForms\Composting.aspx.designer.cs">
       <DependentUpon>Composting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForms\Gallery.aspx.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForms\Gallery.aspx.designer.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForms\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
