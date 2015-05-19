@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nesta.jcccsustainability" >
+
+    <!-- Internet Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+
+        android:label="@string/app_name" >
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".enter_data"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_enter_data"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat"
+            android:icon="@mipmap/ic_launcher"
+            >
+        </activity>
+        <activity
+            android:name=".login"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.AppCompat" >
+        </activity>
+        <activity
+            android:name=".viewGraphs"
+            android:label="@string/title_activity_view_graphs"
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
+        </activity>
+    </application>
+
+</manifest>
