@@ -12,7 +12,7 @@ namespace jccc_sustainability1.WebForms
     public partial class Composting : System.Web.UI.Page
     {
         private static string connectionstring = ConfigurationManager.ConnectionStrings["SUSJCCC1ConnectionString"].ConnectionString;
-        public static int[] years;
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -91,7 +91,7 @@ namespace jccc_sustainability1.WebForms
         {
             SqlConnection con = new SqlConnection(connectionstring);
             con.Open();
-            SqlCommand cmdTotalCompost = new SqlCommand("SELECT [Date],[Total Composted (lbs)] FROM [db4782e67768554c1fa458a46e013cd5da].[dbo].[CompostData] WHERE [Total Composted (lbs)] IS NOT NULL ORDER By [Date]");
+            SqlCommand cmdTotalCompost = new SqlCommand("SELECT [Date],[Total Composted (lbs)] FROM [db49e09001d46d4533a501a49d00c79a11].[dbo].[CompostData] WHERE [Total Composted (lbs)] IS NOT NULL ORDER By [Date]");
             cmdTotalCompost.Connection = con;
             SqlDataReader reader = cmdTotalCompost.ExecuteReader();
             string dates = "[";
@@ -148,7 +148,7 @@ namespace jccc_sustainability1.WebForms
         {
             SqlConnection con = new SqlConnection(connectionstring);
             con.Open();
-            SqlCommand cmdTotalCompost = new SqlCommand("SELECT [Date],[Pre-Consumer Food (lbs)] FROM [db4782e67768554c1fa458a46e013cd5da].[dbo].[CompostData] WHERE [Pre-Consumer Food (lbs)] IS NOT NULL ORDER By [Date]");
+            SqlCommand cmdTotalCompost = new SqlCommand("SELECT [Date],[Pre-Consumer Food (lbs)] FROM [db49e09001d46d4533a501a49d00c79a11].[dbo].[CompostData] WHERE [Pre-Consumer Food (lbs)] IS NOT NULL ORDER By [Date]");
             cmdTotalCompost.Connection = con;
             SqlDataReader reader = cmdTotalCompost.ExecuteReader();
             string dates = "[";
@@ -203,25 +203,15 @@ namespace jccc_sustainability1.WebForms
         {
             SqlConnection con = new SqlConnection(connectionstring);
             con.Open();
-            SqlCommand cmdTotalCompost = new SqlCommand("SELECT [Date],[Total Carbon To Date (lbs)] FROM [db4782e67768554c1fa458a46e013cd5da].[dbo].[CompostData] WHERE [Total Carbon To Date (lbs)] IS NOT NULL ORDER By [Date]");
-            SqlCommand cmdCount = new SqlCommand("SELECT Count(*) FROM [db4782e67768554c1fa458a46e013cd5da].[dbo].[CompostData] WHERE [Total Carbon To Date (lbs)] IS NOT NULL");
+            SqlCommand cmdTotalCompost = new SqlCommand("SELECT [Date],[Total Carbon To Date (lbs)] FROM [db49e09001d46d4533a501a49d00c79a11].[dbo].[CompostData] WHERE [Total Carbon To Date (lbs)] IS NOT NULL ORDER By [Date]");
             cmdTotalCompost.Connection = con;
-            cmdCount.Connection = con;
             SqlDataReader reader = cmdTotalCompost.ExecuteReader();
-            SqlDataReader reader2 = cmdCount.ExecuteReader();
             string dates = "[";
             string weights = "";
-            
-            if (reader2.Read())
-            {
-                int lim = int.Parse(reader2[0].ToString());
-                years = new int[lim];
-            }
-            int i = 0;
             while (reader.Read())
             {
                 DateTime dt = (DateTime)reader[0];
-                years[i] = dt.Year;
+ 
                 dates += dt.Year.ToString();
                 weights += reader[1].ToString();
                 if (reader.Read() != false)
@@ -229,7 +219,7 @@ namespace jccc_sustainability1.WebForms
                     dates += ",";
                     weights += ",";
                 }
-                i++;
+           
             }
     
             dates += "]";

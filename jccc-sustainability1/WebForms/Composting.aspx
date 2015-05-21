@@ -19,6 +19,7 @@
     <script src="../Scripts/justgage.1.0.1.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
     <script src="../Scripts/script.js"></script>
+    <script src="../Scripts/chartist-plugin-tooltip.js"></script>
     <title>JCCC Sustainability</title>
 </head>
 <body>
@@ -47,8 +48,8 @@
                                 <asp:LinkButton ID="RecyclingB" runat="server" Text="Recycling" OnClick="Recycling_Click"></asp:LinkButton></li>
                             <li>
                                 <asp:LinkButton ID="AboutB" runat="server" Text="About" OnClick="About_Click"></asp:LinkButton></li>
-                            <li>
-                                <asp:LinkButton ID="ContactUsB" runat="server" Text="Contact Us" OnClick="ContactUs_Click"></asp:LinkButton></li>
+                            <%-- <li>
+                                <asp:LinkButton ID="ContactUsB" runat="server" Text="Contact Us" OnClick="ContactUs_Click"></asp:LinkButton></li>--%>
                         </ul>
                         <!--End Navbar left side-->
                         <ul class="nav navbar-nav pull-right">
@@ -90,7 +91,9 @@
             <div class="row" id="lineC">
                 <div class="col-12 tfwc">
                     <h2>Total Food Weight Composted</h2>
+                    <ul class="ct-legend"></ul>
                     <div id="line" class="ct-chart ct-golden-section "></div>
+                    
                 </div>
                 <!-- end col-12 -->
             </div>
@@ -171,9 +174,9 @@
             </div>
 
             <hr />
-             <div class="row">
+            <div class="row">
                 <div class="col-12">
-                    <h3 style="width:20%; margin:0 auto;">Internal Temperature</h3>
+                    <h3 style="width: 20%; margin: 0 auto;">Internal Temperature</h3>
                 </div>
                 <!-- end col-12 -->
             </div>
@@ -191,7 +194,8 @@
 
                 <div class="col-sm-4 feature">
                     <div class="panel">
-                        <br /><br />
+                        <br />
+                        <br />
                         <p>Recycling on the JCCC campus just got simpler, faster, and easier! Just put all of your paper, #1-7 plastics, and metals in the blue bins! Broken down cardboard can be placed behind the blue bins. </p>
 
                     </div>
@@ -209,7 +213,7 @@
                 </div>
                 <!-- end feature -->
             </div>
-   <footer>
+            <footer>
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-2">
@@ -257,9 +261,31 @@
                 stroke-width: 1.5px;
             }
 
-            .ct-chart .ct-labels{
-                font-size:25px;
+            .ct-chart .ct-labels {
+                font-size: 25px;
             }
+
+            .ct-legend {
+                padding: 0;
+                font-family: sans-serif;
+            }
+
+                .ct-legend li {
+                    position: relative;
+                    padding-left: 1.3em;
+                    margin-bottom: 0.3em;
+                    list-style-type: none;
+                }
+
+                    .ct-legend li::before {
+                        height: 1em;
+                        width: 1em;
+                        position: absolute;
+                        top: 0.1em;
+                        left: 0;
+                        content: '';
+                        border-radius: 1em;
+                        /*}*/
         </style>
         <script>
             new Chartist.Line('#line', {
@@ -280,11 +306,13 @@
                 axisX: {
                 
                     showGrid: false,
-                    showLabel: false,
-                    offset: 25,
-                    labelOffset: {
-                        y: 15
+                    labelInterpolationFnc: function(value, index) {
+                        return index % 100 === 0 ? value : '';
                     }
+                    
+                    //labelOffset: {
+                    //    y: 15
+                    //}
                 },
                 chartPadding: {
                     right: 20
@@ -311,36 +339,39 @@
                     //}
                 }
             });
+            
 
             new Chartist.Line('#linePreCon', {
                 labels: <%=PreConsumerLabels%>,
                     
-                    series: [{
-                        name: 'Year',
-                        data:[<%=PreConsumerData%>]
-                }
-                ]
-                }, {
-                    fullWidth: true,
-       
-                    showPoint: false,
-              
-                    lineSmooth: true,
-           
-                    axisX: {
-                
-                        showGrid: false,
-                
-                        showLabel: false,
-
-                    },
-                    chartPadding: {
-                        right: 20
+                series: [{
+                    name: 'Year',
+                    data:[<%=PreConsumerData%>]
                     }
-                });
+                    ]
+            }, {
+                fullWidth: true,
+       
+                showPoint: false,
+              
+                lineSmooth: true,
+           
+                axisX: {
+                
+                    showGrid: false,
+                
+                    labelInterpolationFnc: function(value, index) {
+                        return index % 100 === 0 ? value : '';
+                    }
 
-            new Chartist.Line('#lineCarbon', {
-                labels: <%=CLabels%>,
+                },
+                chartPadding: {
+                    right: 20
+                }
+            });
+
+                new Chartist.Line('#lineCarbon', {
+                    labels: <%=CLabels%>,
                     
                 series: [{
                     name: 'Year',
@@ -358,7 +389,9 @@
                 
                     showGrid: false,
                
-                    showLabel: false
+                    labelInterpolationFnc: function(value, index) {
+                        return index % 100 === 0 ? value : '';
+                    }
                 },
                 chartPadding: {
                     right: 20
@@ -402,23 +435,23 @@
                 var g2 = new JustGage({
                     id: "g2", 
                     value: <%=temperature2%>,
-                        min: 0,
-                        max: 100,
-                        gaugeColor: "#999966",
-                        title: "F°",
-                        label: "",
-                        levelColorsGradient: false
-                    });
+                    min: 0,
+                    max: 100,
+                    gaugeColor: "#999966",
+                    title: "F°",
+                    label: "",
+                    levelColorsGradient: false
+                });
         
                 var g3 = new JustGage({
                     id: "g3", 
                     value: <%=temperature3%>, 
-                        min: 0,
-                        max: 100,
-                        gaugeColor: "#999966",
-                        title: "F°",
-                        label: "",
-                        levelColorsGradient: false
+                    min: 0,
+                    max: 100,
+                    gaugeColor: "#999966",
+                    title: "F°",
+                    label: "",
+                    levelColorsGradient: false
                 });
 
                 var g4 = new JustGage({

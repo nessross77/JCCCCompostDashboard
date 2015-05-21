@@ -67,15 +67,6 @@ namespace jccc_sustainability1.WebForms {
         protected global::System.Web.UI.WebControls.LinkButton AboutB;
         
         /// <summary>
-        /// ContactUsB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ContactUsB;
-        
-        /// <summary>
         /// Login control.
         /// </summary>
         /// <remarks>

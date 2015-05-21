@@ -61,6 +61,7 @@
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap.css.map" />
     <Content Include="css\styles.css" />
+    <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -73,6 +74,7 @@
     <Content Include="css\chartist.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="img\Compost.jpg" />
+    <Content Include="img\CompostBBLS.jpg" />
     <Content Include="img\compostBuble.png" />
     <Content Include="img\galleryBubble.jpg" />
     <Content Include="img\recycleBubble.png" />
@@ -80,6 +82,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.css" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chartist-plugin-tooltip.js" />
     <Content Include="Scripts\chartist.js" />
     <Content Include="Scripts\chartist.min.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -104,8 +107,6 @@
     <Content Include="coin-slider\images\1.jpg" />
     <Content Include="coin-slider\images\2.jpg" />
     <Content Include="coin-slider\jquery-1.4.2.js" />
-    <Content Include="Default.aspx" />
-    <Content Include="Global.asax" />
     <Content Include="img\social.jpg" />
     <Content Include="img\in-vessel-composting.jpg" />
     <Content Include="img\JCCCAppLogo.png" />
@@ -134,9 +135,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="NewUserRegistration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

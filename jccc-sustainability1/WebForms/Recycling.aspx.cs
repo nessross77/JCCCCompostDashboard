@@ -57,6 +57,23 @@ namespace jccc_sustainability1.WebForms
             Response.Redirect("Login.aspx");
         }
 
+
+        void setValues()
+        {
+            string[] values = weightsGraph();
+            chartData = values[1];
+            chartLabels = values[0];
+            string[] valuesB = totalRecGraph();
+            chartDataB = valuesB[1];
+            chartLabelsB = valuesB[0];
+            string[] valuesBT = RCGraph();
+            chartDataBT = valuesBT[1];
+            chartLabelsBT = valuesBT[0];
+            string[] valuesM = MoneyGraph();
+            chartDataM = valuesM[1];
+            chartLabelsM = valuesM[0];
+        }
+
         //Pie Chart
         private string m_chartData;
 
@@ -87,19 +104,11 @@ namespace jccc_sustainability1.WebForms
         }
 
 
-        void setValues()
-        {
-            string[] values = weightsGraph();
-            chartData = values[1];
-            chartLabels = values[0];
-        }
-
-
         public static string[] weightsGraph()
         {
             SqlConnection con = new SqlConnection(connectionstring);
             con.Open();
-            SqlCommand cmdTotalCompost = new SqlCommand("SELECT distinct classification,SUM([weight ton]) FROM [db4782e67768554c1fa458a46e013cd5da].[dbo].[RecyclingData] where [Weight ton] is not null group by Classification");
+            SqlCommand cmdTotalCompost = new SqlCommand("SELECT distinct classification,SUM([weight ton]) FROM [db49e09001d46d4533a501a49d00c79a11].[dbo].[RecyclingData] where [Weight ton] is not null group by Classification");
             cmdTotalCompost.Connection = con;
             SqlDataReader reader = cmdTotalCompost.ExecuteReader();
 
@@ -130,5 +139,203 @@ namespace jccc_sustainability1.WebForms
             return values;
         }
         //End Pie Chart
+
+        //Total Recycling Bar chart
+        private string m_chartDataB;
+
+        public string chartDataB
+        {
+            get
+            {
+                return m_chartDataB;
+            }
+            set
+            {
+                m_chartDataB = value;
+            }
+        }
+
+        private string m_chartLabelsB;
+
+        public string chartLabelsB
+        {
+            get
+            {
+                return m_chartLabelsB;
+            }
+            set
+            {
+                m_chartLabelsB = value;
+            }
+        }
+
+
+        public static string[] totalRecGraph()
+        {
+            SqlConnection con = new SqlConnection(connectionstring);
+            con.Open();
+            SqlCommand cmdTotalCompost = new SqlCommand("SELECT year([Pickup date]), sum([Weight ton]) FROM [db49e09001d46d4533a501a49d00c79a11].[dbo].[RecyclingData] group by Year([Pickup Date]) having sum([Weight ton]) is not null");
+            cmdTotalCompost.Connection = con;
+            SqlDataReader reader = cmdTotalCompost.ExecuteReader();
+
+            string classm = "[";
+            string weights = "";
+            while (reader.Read())
+            {
+
+                classm +=  reader[0].ToString() ;
+
+                weights += reader[1].ToString();
+                //if (reader.Read() != false)
+                //{
+                if (reader[0] != null)
+                {
+                    classm += ",";
+                    weights += ",";
+                    //}
+                }
+            }
+            classm = classm.Remove(classm.Length - 1);
+            classm += "]";
+            weights = weights.Remove(weights.Length - 1);
+            //weights += "]";
+            reader.Close();
+            con.Dispose();
+            string[] values = new String[2] { classm, weights };
+            return values;
+        }
+        //End Bar Chart
+
+        //Total Recycling vs Trash Bar chart
+        private string m_chartDataBT;
+
+        public string chartDataBT
+        {
+            get
+            {
+                return m_chartDataBT;
+            }
+            set
+            {
+                m_chartDataBT = value;
+            }
+        }
+
+        private string m_chartLabelsBT;
+
+        public string chartLabelsBT
+        {
+            get
+            {
+                return m_chartLabelsBT;
+            }
+            set
+            {
+                m_chartLabelsBT = value;
+            }
+        }
+
+
+        public static string[] RCGraph()
+        {
+            SqlConnection con = new SqlConnection(connectionstring);
+            con.Open();
+            SqlCommand cmdTotalCompost = new SqlCommand("SELECT year([Date]), sum([Tonnage]) FROM [db49e09001d46d4533a501a49d00c79a11].[dbo].[TrashData] group by Year([Date]) having sum([Tonnage]) is not null order by year([Date])");
+            cmdTotalCompost.Connection = con;
+            SqlDataReader reader = cmdTotalCompost.ExecuteReader();
+
+            string classm = "[";
+            string weights = "";
+            while (reader.Read())
+            {
+
+                classm += reader[0].ToString();
+
+                weights += reader[1].ToString();
+                //if (reader.Read() != false)
+                //{
+                if (reader[0] != null)
+                {
+                    classm += ",";
+                    weights += ",";
+                    //}
+                }
+            }
+            classm = classm.Remove(classm.Length - 1);
+            classm += "]";
+            weights = weights.Remove(weights.Length - 1);
+            //weights += "]";
+            reader.Close();
+            con.Dispose();
+            string[] values = new String[2] { classm, weights };
+            return values;
+        }
+        //End Bar Chart
+
+        //Total Money Bar chart
+        private string m_chartDataM;
+
+        public string chartDataM
+        {
+            get
+            {
+                return m_chartDataM;
+            }
+            set
+            {
+                m_chartDataM = value;
+            }
+        }
+
+        private string m_chartLabelsM;
+
+        public string chartLabelsM
+        {
+            get
+            {
+                return m_chartLabelsM;
+            }
+            set
+            {
+                m_chartLabelsM = value;
+            }
+        }
+
+
+        public static string[] MoneyGraph()
+        {
+            SqlConnection con = new SqlConnection(connectionstring);
+            con.Open();
+            SqlCommand cmdTotalCompost = new SqlCommand("SELECT year([Pickup Date]), sum([Payment]) FROM [db49e09001d46d4533a501a49d00c79a11].[dbo].[RecyclingData] group by Year([Pickup date]) having sum([Payment]) is not null ");
+            cmdTotalCompost.Connection = con;
+            SqlDataReader reader = cmdTotalCompost.ExecuteReader();
+
+            string classm = "[";
+            string weights = "";
+            while (reader.Read())
+            {
+
+                classm += reader[0].ToString();
+
+                weights += reader[1].ToString();
+                //if (reader.Read() != false)
+                //{
+                if (reader[0] != null)
+                {
+                    classm += ",";
+                    weights += ",";
+                    //}
+                }
+            }
+            classm = classm.Remove(classm.Length - 1);
+            classm += "]";
+            weights = weights.Remove(weights.Length - 1);
+            //weights += "]";
+            reader.Close();
+            con.Dispose();
+            string[] values = new String[2] { classm, weights };
+            return values;
+        }
+        //End Bar Chart
     }
 }

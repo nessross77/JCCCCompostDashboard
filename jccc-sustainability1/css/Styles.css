@@ -3,11 +3,12 @@
    Layout
    -------------------------------------- */
 
-.features {
+.feature {
+
     text-align: center;
 }
 
-    .features img {
+    .feature img {
         margin: 0 0 20px;
     }
 
@@ -175,6 +176,10 @@ ul.unstyled {
             font-size: 10px;
         }
         
+        .card{
+            width:100%;
+            margin:0;
+        }
 }
 
 /* Landscape phone to portrait tablet */
@@ -253,7 +258,26 @@ ul.unstyled {
     height:300px;
 }
 
+#totalRec{
+    height:300px;
+}
 
+#RT{
+    height:300px;
+}
+
+#money{
+    height:300px;
+}
+
+.col-sm-12 {
+    height: 475px;
+}
+
+.card{
+    width:35%;
+    margin:0 auto;
+}
 /* --------------------------------------
    Gallery
    -------------------------------------- */

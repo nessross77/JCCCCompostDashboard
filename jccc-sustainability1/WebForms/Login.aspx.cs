@@ -18,16 +18,16 @@ namespace jccc_sustainability1.WebForms
         {
 
         }
-        
-        
-        //protected void Button1_Click(object sender, EventArgs e)
-        //{
-        //    if (CheckCredentials(TextBox1.Text, TextBox2.Text))
-        //    {
 
-        //        Response.Redirect("MasterPage.aspx");
-        //    }
-        //}
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (CheckCredentials(TextBox1.Text, TextBox2.Text))
+            {
+
+                Response.Redirect("MasterPage.aspx");
+            }
+        }
 
         public static bool CheckCredentials(string username, string password)
         {
